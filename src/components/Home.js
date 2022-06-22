@@ -3,17 +3,17 @@ import Leftside from "./Leftside";
 import Main from "./Main";
 import Rightside from "./Rightside";
 
-const Home = () => {
+const Home = (props) => {
   return (
     <Container>
       <Section>
         <h5>
           <a>Hiring in a hurry? - </a>
-          <p>
-            Find talented pros in recort time with Upwork and keep business
-            moving
-          </p>
         </h5>
+        <p>
+          Find talented pros in recort time with Upwork and keep business
+          moving.
+        </p>
       </Section>
       <Layout>
         <Leftside />
@@ -37,7 +37,7 @@ const Content = styled.div`
 
 const Section = styled.div`
   min-height: 50px;
-  padding: 16px;
+  padding: 16px 0;
   box-sizing: content-box;
   text-align: center;
   text-decoration: underline;
@@ -65,13 +65,13 @@ const Section = styled.div`
 
 const Layout = styled.div`
   display: grid;
-  grid-template-areas: "leftsides main rightsides";
-  grid-template-columns: minmax(0, 5fr), minmax(0, 12fr), minmax(300px, 7fr);
+  grid-template-areas: "leftside main rightside";
+  grid-template-columns: minmax(0, 5fr) minmax(0, 12fr) minmax(300px, 7fr);
   column-gap: 25px;
   row-gap: 25px;
-  /* grid-template-rows: auto; */
+  /* grid-template-row: auto; */
   margin: 25px 0;
-  @media (min-width: 768px) {
+  @media (max-width: 768px) {
     display: flex;
     flex-direction: column;
     padding: 0 5px;

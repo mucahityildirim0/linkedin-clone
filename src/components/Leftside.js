@@ -2,15 +2,16 @@ import styled from "styled-components";
 import cardbg from "../images/card-bg.svg";
 import widgeticon from "../images/widget-icon.svg";
 import itemicon from "../images/item-icon.svg";
+import photo from "../images/photo.svg";
 
 const Leftside = (props) => {
   return (
     <Container>
       <ArtCard>
         <UserInfo>
-          <CardBackground />
+          <CardBackground src={cardbg} />
           <a>
-            <Photo src={cardbg} />
+            <Photo src={photo} />
             <Link>Welcome, there!</Link>
           </a>
           <a>
@@ -32,6 +33,7 @@ const Leftside = (props) => {
           </span>
         </Item>
       </ArtCard>
+
       <CommunityCard>
         <a href="#">
           <span>Groups</span>
@@ -54,7 +56,7 @@ const Leftside = (props) => {
 };
 
 const Container = styled.div`
-  grid-area: Leftside;
+  grid-area: leftside;
 `;
 
 const ArtCard = styled.div`
@@ -77,6 +79,7 @@ const UserInfo = styled.div`
 `;
 
 const CardBackground = styled.div`
+  background: url(${(p) => p.src});
   background-position: center;
   background-size: 462px;
   height: 54px;
